@@ -22,7 +22,7 @@ const AddProduct = (props) =>
         const newPrice = window.web3.utils.toWei(price.toString(), 'Ether');
         await props.createNotes(link, title, newPrice);
         
-        M.toast({html: 'Listed product', classes:"#43a047 green darken-1"})
+        // M.toast({html: 'Listed product', classes:"#43a047 green darken-1"})
         history.push('/'); 
 
     }

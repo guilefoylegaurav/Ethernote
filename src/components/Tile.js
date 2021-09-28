@@ -11,7 +11,7 @@ const Tile = (props) =>
   const purchase = async () => {
     
     await purchaseNote(note.id, note.price); 
-    M.toast({html: 'Purchased product', classes:"#43a047 green darken-1"})
+   
     
 
   

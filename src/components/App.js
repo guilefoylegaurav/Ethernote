@@ -78,7 +78,9 @@ class App extends Component
                 this.setState({ loading: true })
                 this.state.marketplace.methods.createListing(link, name, price).send({ from: this.state.account })
                 .once('receipt', (receipt) => {
-                  this.setState({ loading: false })
+                  this.setState({ loading: false }); 
+                  this.setState({products:[]});
+                  this.loadBlockchainData(); 
                 })
               }
             
@@ -87,6 +89,8 @@ class App extends Component
                 this.state.marketplace.methods.purchaseNote(id).send({ from: this.state.account, value: price })
                 .once('receipt', (receipt) => {
                   this.setState({ loading: false })
+                  this.setState({products:[]});
+                  this.loadBlockchainData(); 
                 })
               }
 
